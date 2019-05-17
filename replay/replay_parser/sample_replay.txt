@@ -1,0 +1,307 @@
+|inactive|Battle timer is ON: inactive players will automatically lose when time's up.
+|player|p1|Adaam|5
+|player|p2|Ban Manaphy|will-gen2
+|teamsize|p1|6
+|teamsize|p2|6
+|gametype|singles
+|gen|7
+|tier|[Gen 7] UU
+|rule|Sleep Clause Mod: Limit one foe put to sleep
+|rule|Species Clause: Limit one of each Pokémon
+|rule|OHKO Clause: OHKO moves are banned
+|rule|Moody Clause: Moody is banned
+|rule|Evasion Moves Clause: Evasion moves are banned
+|rule|Endless Battle Clause: Forcing endless battles is banned
+|rule|HP Percentage Mod: HP is shown in percentages
+|clearpoke
+|poke|p1|Houndoom, M|item
+|poke|p1|Togekiss, M|item
+|poke|p1|Terrakion|item
+|poke|p1|Scizor, M|item
+|poke|p1|Latias, F|item
+|poke|p1|Nidoking, M|item
+|poke|p2|Sylveon, F|item
+|poke|p2|Tsareena, F|item
+|poke|p2|Gengar, M|item
+|poke|p2|Cobalion|item
+|poke|p2|Aerodactyl, M|item
+|poke|p2|Krookodile, F|item
+|teampreview
+|c|?Ban Manaphy|hf man
+|c|?Adaam|u2
+|c|+vivalospride|THE
+|c|+vivalospride|DOG
+|c|+CBU|go adaam
+|c|+ChillShadow|go mana!!!
+|c|+Shiba|@Adaam WeirdChamp
+|inactive|Adaam has 270 seconds left.
+|inactive|Ban Manaphy has 270 seconds left.
+|c|+CBU|adaam i like your team but u brought the wrong dog
+|c|?Ban Manaphy|cats are superior anyway
+|c|+Scizorphobic ?|go mana
+|c|+Hydreigon Specs|every pokemon is a dog
+|c|+Hydreigon Specs|-hs
+|c|?Adaam|is there another dog
+|c|+SilvioGuacamole|go adaam!
+|inactive|Ban Manaphy has 240 seconds left.
+|c|?Adaam|mane o
+|
+|start
+|switch|p1a: Terrakion|Terrakion|100/100
+|switch|p2a: Krookodile|Krookodile, F|100/100
+|-ability|p2a: Krookodile|Intimidate|boost
+|-unboost|p1a: Terrakion|atk|1
+|turn|1
+|c|+Hydreigon Specs|toge is a flying dog
+|c|+vivalospride|adaam's team is literally just
+|c|+vivalospride|THREATS
+|
+|switch|p2a: Gengar|Gengar, M, shiny|100/100
+|move|p1a: Terrakion|Stealth Rock|p2a: Gengar
+|-sidestart|p2: Ban Manaphy|move: Stealth Rock
+|
+|upkeep
+|turn|2
+|
+|move|p2a: Gengar|Substitute|p2a: Gengar
+|-start|p2a: Gengar|Substitute
+|-damage|p2a: Gengar|76/100
+|move|p1a: Terrakion|Stone Edge|p2a: Gengar
+|-end|p2a: Gengar|Substitute
+|
+|upkeep
+|turn|3
+|
+|switch|p2a: Krookodile|Krookodile, F|100/100
+|-damage|p2a: Krookodile|94/100|[from] Stealth Rock
+|-ability|p2a: Krookodile|Intimidate|boost
+|-unboost|p1a: Terrakion|atk|1
+|move|p1a: Terrakion|Stone Edge|p2a: Krookodile
+|-resisted|p2a: Krookodile
+|-damage|p2a: Krookodile|77/100
+|
+|upkeep
+|turn|4
+|inactive|Adaam has 240 seconds left.
+|c|+Mengy ?|someone tried to tell me flareon was a dog
+|
+|switch|p2a: Gengar|Gengar, M, shiny|76/100
+|-damage|p2a: Gengar|63/100|[from] Stealth Rock
+|move|p1a: Terrakion|Close Combat|p2a: Gengar
+|-immune|p2a: Gengar
+|
+|upkeep
+|turn|5
+|c|+Pohjis|-
+|inactive|Adaam has 240 seconds left.
+|inactive|Adaam has 210 seconds left.
+|
+|move|p2a: Gengar|Shadow Ball|p1a: Terrakion
+|-damage|p1a: Terrakion|54/100
+|move|p1a: Terrakion|Stone Edge|p2a: Gengar|[miss]
+|-miss|p1a: Terrakion|p2a: Gengar
+|
+|upkeep
+|turn|6
+|c|+Nakeeb|go go go ogo go go go manaphy
+|
+|switch|p1a: Scizor|Scizor, M|100/100
+|-zpower|p2a: Gengar
+|move|p2a: Gengar|All-Out Pummeling|p1a: Scizor|[zeffect]
+|-damage|p1a: Scizor|17/100
+|
+|upkeep
+|turn|7
+|c|+Nakeeb|damn that was a stone edge crit there
+|c|+Nakeeb|smfh hax
+|c|+Hydreigon Specs|stfu nakeeb
+|c|+Nakeeb|kk
+|inactive|Adaam has 210 seconds left.
+|
+|switch|p2a: Cobalion|Cobalion, shiny|100/100
+|-damage|p2a: Cobalion|97/100|[from] Stealth Rock
+|switch|p1a: Houndoom|Houndoom, M|100/100
+|
+|upkeep
+|turn|8
+|
+|switch|p2a: Sylveon|Sylveon, F|100/100
+|-damage|p2a: Sylveon|88/100|[from] Stealth Rock
+|detailschange|p1a: Houndoom|Houndoom-Mega, M
+|-mega|p1a: Houndoom|Houndoom|Houndoominite
+|move|p1a: Houndoom|Fire Blast|p2a: Sylveon
+|-damage|p2a: Sylveon|45/100
+|
+|-heal|p2a: Sylveon|52/100|[from] item: Leftovers
+|upkeep
+|turn|9
+|inactive|Adaam has 210 seconds left.
+|inactive|Adaam has 180 seconds left.
+|
+|move|p1a: Houndoom|Sludge Bomb|p2a: Sylveon
+|-supereffective|p2a: Sylveon
+|-damage|p2a: Sylveon|6/100
+|move|p2a: Sylveon|Hyper Voice|p1a: Houndoom
+|-damage|p1a: Houndoom|52/100
+|
+|-heal|p2a: Sylveon|12/100|[from] item: Leftovers
+|upkeep
+|turn|10
+|
+|move|p1a: Houndoom|Dark Pulse|p2a: Sylveon
+|-resisted|p2a: Sylveon
+|-damage|p2a: Sylveon|0 fnt
+|faint|p2a: Sylveon
+|
+|upkeep
+|
+|switch|p2a: Aerodactyl|Aerodactyl, M|100/100
+|-ability|p2a: Aerodactyl|Unnerve|p1: Adaam
+|-damage|p2a: Aerodactyl|76/100|[from] Stealth Rock
+|turn|11
+|inactive|Adaam has 180 seconds left.
+|inactive|Adaam has 150 seconds left.
+|inactive|Adaam has 120 seconds left.
+|
+|switch|p1a: Terrakion|Terrakion|54/100
+|detailschange|p2a: Aerodactyl|Aerodactyl-Mega, M
+|-mega|p2a: Aerodactyl|Aerodactyl|Aerodactylite
+|move|p2a: Aerodactyl|Earthquake|p1a: Terrakion
+|-supereffective|p1a: Terrakion
+|-damage|p1a: Terrakion|0 fnt
+|faint|p1a: Terrakion
+|
+|upkeep
+|c|+vivalospride|anyone else stan anderson paak
+|inactive|Adaam has 120 seconds left.
+|
+|switch|p1a: Latias|Latias, F|100/100
+|turn|12
+|inactive|Adaam has 120 seconds left.
+|
+|switch|p2a: Tsareena|Tsareena, F|100/100
+|-damage|p2a: Tsareena|88/100|[from] Stealth Rock
+|move|p1a: Latias|Draco Meteor|p2a: Tsareena
+|-damage|p2a: Tsareena|11/100
+|-unboost|p1a: Latias|spa|2
+|
+|upkeep
+|turn|13
+|
+|move|p1a: Latias|Draco Meteor|p2a: Tsareena
+|-damage|p2a: Tsareena|0 fnt
+|-unboost|p1a: Latias|spa|2
+|faint|p2a: Tsareena
+|
+|upkeep
+|inactive|Ban Manaphy has 270 seconds left.
+|inactive|Ban Manaphy has 240 seconds left.
+|
+|switch|p2a: Krookodile|Krookodile, F|77/100
+|-damage|p2a: Krookodile|71/100|[from] Stealth Rock
+|-ability|p2a: Krookodile|Intimidate|boost
+|-unboost|p1a: Latias|atk|1
+|turn|14
+|c|+Mengy ?|don't you mean Anderson .Paak.
+|
+|-activate|p1a: Latias|move: Pursuit
+|move|p2a: Krookodile|Pursuit|p1a: Latias|[from]Pursuit
+|-supereffective|p1a: Latias
+|-damage|p1a: Latias|15/100
+|switch|p1a: Togekiss|Togekiss, M|100/100
+|
+|upkeep
+|turn|15
+|inactive|Ban Manaphy has 240 seconds left.
+|c|+vivalospride|yes i apologize
+|
+|move|p2a: Krookodile|Pursuit|p1a: Togekiss
+|-resisted|p1a: Togekiss
+|-damage|p1a: Togekiss|91/100
+|-zpower|p1a: Togekiss
+|move|p1a: Togekiss|All-Out Pummeling|p2a: Krookodile|[zeffect]
+|-supereffective|p2a: Krookodile
+|-damage|p2a: Krookodile|0 fnt
+|faint|p2a: Krookodile
+|
+|upkeep
+|inactive|Ban Manaphy has 240 seconds left.
+|inactive|Ban Manaphy has 210 seconds left.
+|
+|switch|p2a: Aerodactyl|Aerodactyl-Mega, M|76/100
+|-damage|p2a: Aerodactyl|51/100|[from] Stealth Rock
+|turn|16
+|
+|move|p2a: Aerodactyl|Stone Edge|p1a: Togekiss
+|-supereffective|p1a: Togekiss
+|-damage|p1a: Togekiss|0 fnt
+|faint|p1a: Togekiss
+|
+|upkeep
+|
+|switch|p1a: Scizor|Scizor, M|17/100
+|turn|17
+|
+|switch|p2a: Cobalion|Cobalion, shiny|97/100
+|-damage|p2a: Cobalion|94/100|[from] Stealth Rock
+|move|p1a: Scizor|Bullet Punch|p2a: Cobalion
+|-resisted|p2a: Cobalion
+|-damage|p2a: Cobalion|81/100
+|-damage|p1a: Scizor|0 fnt|[from] item: Rocky Helmet|[of] p2a: Cobalion
+|faint|p1a: Scizor
+|
+|upkeep
+|
+|switch|p1a: Houndoom|Houndoom-Mega, M|52/100
+|turn|18
+|inactive|Ban Manaphy has 210 seconds left.
+|
+|switch|p2a: Gengar|Gengar, M, shiny|63/100
+|-damage|p2a: Gengar|51/100|[from] Stealth Rock
+|move|p1a: Houndoom|Fire Blast|p2a: Gengar
+|-damage|p2a: Gengar|0 fnt
+|faint|p2a: Gengar
+|
+|upkeep
+|
+|switch|p2a: Aerodactyl|Aerodactyl-Mega, M|51/100
+|-damage|p2a: Aerodactyl|26/100|[from] Stealth Rock
+|turn|19
+|inactive|Adaam has 150 seconds left.
+|
+|move|p2a: Aerodactyl|Stone Edge|p1a: Houndoom|[miss]
+|-miss|p2a: Aerodactyl|p1a: Houndoom
+|move|p1a: Houndoom|Dark Pulse|p2a: Aerodactyl
+|-damage|p2a: Aerodactyl|0 fnt
+|faint|p2a: Aerodactyl
+|
+|upkeep
+|
+|switch|p2a: Cobalion|Cobalion, shiny|81/100
+|-damage|p2a: Cobalion|78/100|[from] Stealth Rock
+|turn|20
+|
+|move|p1a: Houndoom|Dark Pulse|p2a: Cobalion
+|-resisted|p2a: Cobalion
+|-damage|p2a: Cobalion|46/100
+|-ability|p2a: Cobalion|Justified|boost
+|-boost|p2a: Cobalion|atk|1
+|move|p2a: Cobalion|Close Combat|p1a: Houndoom
+|-supereffective|p1a: Houndoom
+|-damage|p1a: Houndoom|0 fnt
+|-unboost|p2a: Cobalion|def|1
+|-unboost|p2a: Cobalion|spd|1
+|faint|p1a: Houndoom
+|
+|upkeep
+|
+|switch|p1a: Latias|Latias, F|15/100
+|turn|21
+|c|?Ban Manaphy|gg
+|c|?Adaam|gg
+|
+|move|p1a: Latias|Psychic|p2a: Cobalion
+|-damage|p2a: Cobalion|0 fnt
+|faint|p2a: Cobalion
+|
+|win|Adaam
