@@ -7,12 +7,9 @@ class ParserTest(TestCase):
     @classmethod
     def setUpClass(cls):
         super(ParserTest, cls).setUpClass()
-        parser = Parser(open(Path.cwd() / "replay" / "replay_parser" / "sample_replay.txt", "r").readlines())
+        cls.parser = Parser(open(Path.cwd() / "replay" / "replay_parser" / "sample_replay.txt", "r").readlines())
 
     def test_parse_players(self):
-        self.assertEqual(1, 2-1)
-
-    def test44(self):
-        self.assertEqual(4, 4)
-
-
+        players = self.parser.parse_players()
+        self.assertEqual(players[0], "Adaam")
+        self.assertEqual(players[1], "Ban Manaphy")
