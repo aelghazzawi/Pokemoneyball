@@ -11,5 +11,5 @@ class ParserTest(TestCase):
 
     def test_parse_players(self):
         players = self.parser.parse_players()
-        self.assertEqual(players[0], "Adaam")
-        self.assertEqual(players[1], "Ban Manaphy")
+        self.assertEqual(players["p1"], "Adaam")
+        self.assertEqual(players["p2"], "Ban Manaphy")

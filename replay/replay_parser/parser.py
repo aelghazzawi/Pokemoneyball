@@ -4,11 +4,11 @@ class Parser:
 		self.url = url
 
 	def parse_players(self):
-		""" Returns list of player names """
+		""" Returns dict of player num -> player name"""
 		players_lines = [line for line in self.text if line.startswith("|player")]
-		players = []
+		players = {}
 		for line in players_lines:
 			split_line = line.split("|")
-			players.append(split_line[3])
+			players[split_line[2]] = split_line[3]
 		return players
 
