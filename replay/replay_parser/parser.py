@@ -12,6 +12,16 @@ class Parser:
 			players[split_line[2]] = split_line[3]
 		return players
 
+	def parse_generation(self):
+		""" Return generation as an integer """
+		generation_line = [line for line in self.text if line.startswith("|gen")][0]
+		return int(generation_line.split("|")[2])
+
+	def parse_tier(self):
+		""" Return tier name as a string (i.e OU) """
+		tier_line = [line for line in self.text if line.startswith("|tier")][0]
+		return tier_line.split(" ")[2].rstrip("\n")
+
 	def parse_teams(self):
 		""" Returns dict of player num -> team. Team represented by list of 6 mons. """
 		pokemon_lines = [line for line in self.text if line.startswith("|poke")]

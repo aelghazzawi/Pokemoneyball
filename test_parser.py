@@ -19,4 +19,12 @@ class ParserTest(TestCase):
         self.assertEqual(sorted(teams["p1"]), ["Houndoom", "Latias", "Nidoking", "Scizor", "Terrakion", "Togekiss"])
         self.assertEqual(sorted(teams["p2"]), ["Aerodactyl", "Cobalion", "Gengar", "Krookodile", "Sylveon", "Tsareena"])
 
+    def test_parse_generation(self):
+        gen = self.parser.parse_generation()
+        self.assertEqual(gen, 7)
+
+    def test_parse_tier(self):
+        tier = self.parser.parse_tier()
+        self.assertEqual(tier, "UU")
+
 
