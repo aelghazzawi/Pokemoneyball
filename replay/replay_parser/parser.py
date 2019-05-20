@@ -36,3 +36,8 @@ class Parser:
 				teams[player_number] = [pokemon]
 		return teams
 
+	def parse_turn_count(self):
+		""" Returns total number of turns in the battle. """
+		return int([line for line in reversed(self.text)
+						if line.startswith("|turn")][0].split("|")[2])
+

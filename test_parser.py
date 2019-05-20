@@ -27,4 +27,8 @@ class ParserTest(TestCase):
         tier = self.parser.parse_tier()
         self.assertEqual(tier, "UU")
 
+    def test_parse_turn_count(self):
+        count = self.parser.parse_turn_count()
+        self.assertEqual(count, 21)
+
 
