@@ -1,3 +1,7 @@
+import queue
+from replay.replay_parser.battle import Pokemon
+
+
 class Parser:
 	def __init__(self, text, url=None):
 		self.text = text
@@ -31,13 +35,24 @@ class Parser:
 			player_number = split_line[2]
 			pokemon = split_line[3].split(",", 1)[0]
 			if player_number in teams.keys():
-				teams[player_number].append(pokemon)
+				teams[player_number].append(Pokemon(pokemon))
 			else:
-				teams[player_number] = [pokemon]
+				teams[player_number] = [Pokemon(pokemon)]
 		return teams
 
 	def parse_turn_count(self):
 		""" Returns total number of turns in the battle. """
 		return int([line for line in reversed(self.text)
 						if line.startswith("|turn")][0].split("|")[2])
+
+	def parse_turns(self):
+		""" Returns a Queue of all the turns with Turn 1 at the front"""
+		turns = queue.Queue()
+		for line in self.text:
+			x = 5
+		return turns
+
+
+
+
 

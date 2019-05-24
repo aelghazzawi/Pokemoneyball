@@ -7,17 +7,25 @@ class ParserTest(TestCase):
     @classmethod
     def setUpClass(cls):
         super(ParserTest, cls).setUpClass()
-        cls.parser = Parser(open(Path.cwd() / "sample_replay.txt", "r").readlines())
+        cls.parser = Parser(open(Path.cwd() / 'sample_replay.txt', 'r').readlines())
 
     def test_parse_players(self):
         players = self.parser.parse_players()
-        self.assertEqual(players["p1"], "Adaam")
-        self.assertEqual(players["p2"], "Ban Manaphy")
+        self.assertEqual(players['p1'], 'Adaam')
+        self.assertEqual(players['p2'], 'Ban Manaphy')
 
     def test_parse_teams(self):
         teams = self.parser.parse_teams()
-        self.assertEqual(sorted(teams["p1"]), ["Houndoom", "Latias", "Nidoking", "Scizor", "Terrakion", "Togekiss"])
-        self.assertEqual(sorted(teams["p2"]), ["Aerodactyl", "Cobalion", "Gengar", "Krookodile", "Sylveon", "Tsareena"])
+        teams['p1'].sort()
+        teams['p2'].sort()
+        team1_names = []
+        for pokemon in teams['p1']:
+            team1_names.append(pokemon.species)
+        self.assertEqual(team1_names, ['Houndoom', 'Latias', 'Nidoking', 'Scizor', 'Terrakion', 'Togekiss'])
+        team2_names = []
+        for pokemon in teams['p2']:
+            team2_names.append(pokemon.species)
+        self.assertEqual(team2_names, ['Aerodactyl', 'Cobalion', 'Gengar', 'Krookodile', 'Sylveon', 'Tsareena'])
 
     def test_parse_generation(self):
         gen = self.parser.parse_generation()
@@ -25,7 +33,7 @@ class ParserTest(TestCase):
 
     def test_parse_tier(self):
         tier = self.parser.parse_tier()
-        self.assertEqual(tier, "UU")
+        self.assertEqual(tier, 'UU')
 
     def test_parse_turn_count(self):
         count = self.parser.parse_turn_count()
