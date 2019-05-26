@@ -1,5 +1,8 @@
 import queue
 from replay.replay_parser.battle import Pokemon
+from replay.replay_parser.battle import Turn
+from replay.replay_parser.battle import Switch
+from replay.replay_parser.battle import Move
 
 
 class Parser:
@@ -23,17 +26,17 @@ class Parser:
 
 	def parse_tier(self):
 		""" Return tier name as a string (i.e OU) """
-		tier_line = [line for line in self.text if line.startswith("|tier")][0]
-		return tier_line.split(" ")[2].rstrip("\n")
+		tier_line = [line for line in self.text if line.startswith('|tier')][0]
+		return tier_line.split(' ')[2].rstrip('\n')
 
 	def parse_teams(self):
 		""" Returns dict of player num -> team. Team represented by list of 6 mons. """
-		pokemon_lines = [line for line in self.text if line.startswith("|poke")]
+		pokemon_lines = [line for line in self.text if line.startswith('|poke')]
 		teams = {}
 		for line in pokemon_lines:
-			split_line = line.split("|")
+			split_line = line.split('|')
 			player_number = split_line[2]
-			pokemon = split_line[3].split(",", 1)[0]
+			pokemon = split_line[3].split(',', 1)[0]
 			if player_number in teams.keys():
 				teams[player_number].append(Pokemon(pokemon))
 			else:
@@ -43,13 +46,28 @@ class Parser:
 	def parse_turn_count(self):
 		""" Returns total number of turns in the battle. """
 		return int([line for line in reversed(self.text)
-						if line.startswith("|turn")][0].split("|")[2])
+						if line.startswith('|turn')][0].split('|')[2])
 
 	def parse_turns(self):
 		""" Returns a Queue of all the turns with Turn 1 at the front"""
-		turns = queue.Queue()
+		turns = []
+		switches = []
+		moves = []
+		turn_number = 0
 		for line in self.text:
-			x = 5
+			split_line = line.split('|')
+			if line.startswith('|turn') and split_line[2] != '1':
+				turns.append(Turn(turn_number, switches, moves))
+				turn_number = line.split('|')[2]
+				switches = []
+				moves = []
+
+			if line.startswith('|switch'):
+				switch = split_line[2].split(' ')
+				player = 1 if switch[0] == 'p1a:' else 2
+				pokemon = switch[1]
+				switches.append(Switch(player, pokemon))
+
 		return turns
 
 

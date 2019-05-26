@@ -25,9 +25,44 @@ class Pokemon:
             self.__health = new_health
 
 
+class Switch:
+    def __init__(self, player, pokemon):
+        self.__player = player
+        self.__pokemon = pokemon
+
+    @property
+    def player(self):
+        return self.__player
+
+    @property
+    def pokemon(self):
+        return self.__pokemon
+
+
+class Move:
+    def __init__(self, pokemon, damage):
+        self.pokemon = pokemon
+        self.damage = damage
+
+    @property
+    def pokemon(self):
+        return self.__pokemon
+
+    @property
+    def damage(self):
+        return self.__damage
+
+
 class Turn:
-    def __init__(self, number, standby_phase, attack_phase, end_phase):
-        self.number = number
-        self.standby_phase = standby_phase
-        self.attack_phase = attack_phase
-        self.end_phase = end_phase
+    def __init__(self, number, switches, moves):
+        self.__number = number
+        self.__switches = switches
+        self.moves = moves
+
+    @property
+    def number(self):
+        return self.__number
+
+    @property
+    def switches(self):
+        return self.__switches

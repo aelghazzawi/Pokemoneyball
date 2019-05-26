@@ -39,4 +39,8 @@ class ParserTest(TestCase):
         count = self.parser.parse_turn_count()
         self.assertEqual(count, 21)
 
+    def test_parse_turns(self):
+        turns = self.parser.parse_turns()
+        self.assertEqual(len(turns), 21)
+
 
