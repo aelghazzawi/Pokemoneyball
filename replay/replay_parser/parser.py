@@ -49,13 +49,15 @@ class Parser:
 						if line.startswith('|turn')][0].split('|')[2])
 
 	def parse_turns(self):
-		""" Returns a Queue of all the turns with Turn 1 at the front"""
+		""" Returns a Queue of all the turns with Turn 1 at the front """
 		turns = []
 		switches = []
 		moves = []
+		# treat leads as Turn 0
 		turn_number = 0
 		for line in self.text:
 			split_line = line.split('|')
+			# accumulate all the switches and moves until next turn is found
 			if line.startswith('|turn') and split_line[2] != '1':
 				turns.append(Turn(turn_number, switches, moves))
 				turn_number = line.split('|')[2]
@@ -68,6 +70,13 @@ class Parser:
 				pokemon = switch[1]
 				switches.append(Switch(player, pokemon))
 
+			if line.startswith('|move'):
+				move = split_line[2].split(' ')
+				player = 1 if move[0] == 'p1a:' else 2
+				pokemon = move[1]
+				moves.append(Move(player, pokemon))
+
+		turns.append(Turn(turn_number, switches, moves))
 		return turns
 
 

@@ -40,9 +40,14 @@ class Switch:
 
 
 class Move:
-    def __init__(self, pokemon, damage):
-        self.pokemon = pokemon
-        self.damage = damage
+    def __init__(self, player, pokemon, damage=0):
+        self.__player = player
+        self.__pokemon = pokemon
+        self.__damage = damage
+
+    @property
+    def player(self):
+        return self.__player
 
     @property
     def pokemon(self):

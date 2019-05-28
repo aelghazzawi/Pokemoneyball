@@ -29,4 +29,22 @@ class MoneyballTest(TestCase):
         self.assertEqual(c2['Aerodactyl'], 3)
         self.assertEqual(c2['Krookodile'], 3)
 
+    def test_aggregate_moves(self):
+        counters = mb.aggregate_moves(self.turns)
+        c1 = counters[0]
+        self.assertEqual(c1['Houndoom'], 6)
+        self.assertEqual(c1['Togekiss'], 1)
+        self.assertEqual(c1['Terrakion'], 5)
+        self.assertEqual(c1['Scizor'], 1)
+        self.assertEqual(c1['Latias'], 3)
+        self.assertEqual(c1['Nidoking'], 0)
+
+        c2 = counters[1]
+        self.assertEqual(c2['Sylveon'], 1)
+        self.assertEqual(c2['Tsareena'], 0)
+        self.assertEqual(c2['Gengar'], 3)
+        self.assertEqual(c2['Cobalion'], 1)
+        self.assertEqual(c2['Aerodactyl'], 3)
+        self.assertEqual(c2['Krookodile'], 2)
+
 

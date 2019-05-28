@@ -19,3 +19,19 @@ def aggregate_switches(turns):
     counter1 = Counter(p1)
     counter2 = Counter(p2)
     return counter1, counter2
+
+
+def aggregate_moves(turns):
+    p1 = []
+    p2 = []
+    for turn in turns:
+        for move in turn.moves:
+            print('Player ' + str(move.player) + ' has used: ' + move.pokemon)
+            if move.player == 1:
+                p1.append(move.pokemon)
+            else:
+                p2.append(move.pokemon)
+
+    counter1 = Counter(p1)
+    counter2 = Counter(p2)
+    return counter1, counter2
