@@ -47,4 +47,8 @@ class MoneyballTest(TestCase):
         self.assertEqual(c2['Aerodactyl'], 3)
         self.assertEqual(c2['Krookodile'], 2)
 
+    def test_aggregate_damage(self):
+        teams = self.parser.parse_teams()
+        mb.aggregate_damage(self.turns, teams)
+
 

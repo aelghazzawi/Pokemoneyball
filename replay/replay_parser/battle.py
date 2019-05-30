@@ -26,9 +26,10 @@ class Pokemon:
 
 
 class Switch:
-    def __init__(self, player, pokemon):
+    def __init__(self, player, pokemon, damage):
         self.__player = player
         self.__pokemon = pokemon
+        self.__damage = damage
 
     @property
     def player(self):
@@ -37,6 +38,10 @@ class Switch:
     @property
     def pokemon(self):
         return self.__pokemon
+
+    @property
+    def damage(self):
+        return self.__damage
 
 
 class Move:

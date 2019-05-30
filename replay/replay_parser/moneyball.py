@@ -26,7 +26,6 @@ def aggregate_moves(turns):
     p2 = []
     for turn in turns:
         for move in turn.moves:
-            print('Player ' + str(move.player) + ' has used: ' + move.pokemon)
             if move.player == 1:
                 p1.append(move.pokemon)
             else:
@@ -35,3 +34,20 @@ def aggregate_moves(turns):
     counter1 = Counter(p1)
     counter2 = Counter(p2)
     return counter1, counter2
+
+
+def aggregate_damage(turns, teams):
+    """ Computes direct damage done by each Pokemon """
+    # TODO: Support indirect damage health, Substitute, recoil etc
+
+    # Get the teams in a dict first
+    player1_team = {}
+    player2_team = {}
+    for pokemon in teams['p1']:
+        player1_team[pokemon.species] = Pokemon(pokemon)
+    for pokemon in teams['p2']:
+        player2_team[pokemon.species] = Pokemon(pokemon)
+
+
+
+
