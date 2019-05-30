@@ -45,18 +45,32 @@ class Switch:
 
 
 class Move:
-    def __init__(self, player, pokemon, damage=0):
+    def __init__(self, player, user, move, target, damage=0):
         self.__player = player
-        self.__pokemon = pokemon
+        self.__user = user
+        self.__move = move
+        self.__target = target
         self.__damage = damage
+
+    def __str__(self):
+        return 'Player ' + str(self.__player) + ' ' + self.user + ' has used ' + self.__move + ' against ' + \
+               self.__target.species + ' for ' + str(self.__damage) + ' damage.'
 
     @property
     def player(self):
         return self.__player
 
     @property
-    def pokemon(self):
-        return self.__pokemon
+    def user(self):
+        return self.__user
+
+    @property
+    def move(self):
+        return self.__move
+
+    @property
+    def target(self):
+        return self.__target
 
     @property
     def damage(self):

@@ -1,4 +1,5 @@
 import queue
+import re
 from replay.replay_parser.battle import Pokemon
 from replay.replay_parser.battle import Turn
 from replay.replay_parser.battle import Switch
@@ -56,6 +57,8 @@ class Parser:
 		# treat leads as Turn 0
 		turn_number = 0
 		is_switch = True
+		p1_pokemon = None
+		p2_pokemon = None
 		for line in self.text:
 			split_line = line.split('|')
 			# accumulate all the switches and moves until next turn is found
@@ -66,16 +69,49 @@ class Parser:
 				moves = []
 
 			if line.startswith('|switch'):
+				is_switch = True
 				switch = split_line[2].split(' ')
-				player = 1 if switch[0] == 'p1a:' else 2
 				pokemon = switch[1]
-				switches.append(Switch(player, pokemon))
+				health = int(split_line[4].split('/', 1)[0])
+				if switch[0] == 'p1a:':
+					player = 1
+					p1_pokemon = Pokemon(pokemon, health)
+				else:
+					player = 2
+					p2_pokemon = Pokemon(pokemon, health)
+				switches.append(Switch(player, Pokemon(pokemon, health)))
 
 			if line.startswith('|move'):
+				is_switch = False
 				move = split_line[2].split(' ')
 				player = 1 if move[0] == 'p1a:' else 2
-				pokemon = move[1]
-				moves.append(Move(player, pokemon))
+				target = p2_pokemon if move[0] == 'p1a:' else p1_pokemon
+				user_pokemon = move[1]
+				move_name = split_line[3]
+				moves.append(Move(player, user_pokemon, move_name, target))
+
+			if line.startswith('|-damage'):
+				new_health = int(re.split(r'[ /]+', split_line[3])[0])
+				if is_switch:
+					old_switch = switches[-1]
+					del switches[-1]
+					old_switch.pokemon.health = new_health
+					if old_switch.player == 1:
+						p1_pokemon = old_switch.pokemon
+					else:
+						p2_pokemon = old_switch.pokemon
+					# TODO: keep track of how much damage dealt via hazards
+					switches.append(Switch(old_switch.player, old_switch.pokemon))
+
+				# TODO: add rocky helm/rough skin support (remove length condition)
+				if not is_switch and len(split_line) < 5:
+					old_move = moves[-1]
+					del moves[-1]
+					damage = old_move.target.health - new_health
+					#print(old_move.user + ' has done ' + str(damage) + ' damage.')
+					old_move.target.health = new_health
+					moves.append(Move(old_move.player, old_move.user, old_move.move, old_move.target, damage))
+
 
 		turns.append(Turn(turn_number, switches, moves))
 		return turns

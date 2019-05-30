@@ -12,9 +12,9 @@ def aggregate_switches(turns):
     for turn in turns:
         for switch in turn.switches:
             if switch.player == 1:
-                p1.append(switch.pokemon)
+                p1.append(switch.pokemon.species)
             else:
-                p2.append(switch.pokemon)
+                p2.append(switch.pokemon.species)
 
     counter1 = Counter(p1)
     counter2 = Counter(p2)
@@ -27,9 +27,9 @@ def aggregate_moves(turns):
     for turn in turns:
         for move in turn.moves:
             if move.player == 1:
-                p1.append(move.pokemon)
+                p1.append(move.user)
             else:
-                p2.append(move.pokemon)
+                p2.append(move.user)
 
     counter1 = Counter(p1)
     counter2 = Counter(p2)
@@ -44,9 +44,19 @@ def aggregate_damage(turns, teams):
     player1_team = {}
     player2_team = {}
     for pokemon in teams['p1']:
-        player1_team[pokemon.species] = Pokemon(pokemon)
+        player1_team[pokemon.species] = 0
     for pokemon in teams['p2']:
-        player2_team[pokemon.species] = Pokemon(pokemon)
+        player2_team[pokemon.species] = 0
+
+    for turn in turns:
+        for move in turn.moves:
+            print(move)
+            if move.player == 1:
+                player1_team[move.user] = player1_team[move.user] + move.damage
+            else:
+                player2_team[move.user] = player2_team[move.user] + move.damage
+
+    print(player1_team)
 
 
 
