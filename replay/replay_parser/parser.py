@@ -55,6 +55,7 @@ class Parser:
 		moves = []
 		# treat leads as Turn 0
 		turn_number = 0
+		is_switch = True
 		for line in self.text:
 			split_line = line.split('|')
 			# accumulate all the switches and moves until next turn is found
